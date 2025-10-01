@@ -43,22 +43,23 @@ Une application RESTful développée en Java avec Spring Boot permettant de gér
 
 ```bash
 # Cloner le dépôt
-git clone  git@github-email1:belviPouadjeu/Product-API.git
+git clone git@github-email1:belviPouadjeu/Product-API.git
 
 # Accéder au dossier
-cd Product-API.git
+cd Product-API
 
 # Construire le projet
 ./mvnw clean install
 
 # Lancer le projet
 ./mvnw spring-boot:run
+```
 
 ## 📘 Documentation Swagger
 
 ### Accéder à la documentation interactive :
 
-```bash
+```
 http://localhost:8082/swagger-ui/index.html
 ```
 # 📬 Endpoints principaux
@@ -81,7 +82,7 @@ Retourne la liste de tous les produits :
   ]
 }
 ```
-### 🔹 PUT /products/{id}
+## 🔹 PUT /products/{id}
 
 **Mettre à jour un produit existant :**
 
@@ -92,17 +93,16 @@ Retourne la liste de tous les produits :
   "stockQuantity": 7
 }
 ```
-### Réponse : 200 OK
+**Réponse :** 200 OK
 
-🔹 **DELETE /products/{id}**  
+## 🔹 DELETE /products/{id}  
 Supprime le produit correspondant à l’ID donné.
 
 **Réponse :**  
 - 200 OK  
 - ou 404 Not Found si non trouvé.
 
----
-🔹 **GET /products/low-stock**  
+## 🔹 GET /products/low-stock  
 Retourne les produits dont la quantité en stock est inférieure à 5 :
 
 ```json
@@ -115,12 +115,4 @@ Retourne les produits dont la quantité en stock est inférieure à 5 :
 ]
 ```
 
-### ✅ Validation
 
-- Le champ `name` est obligatoire et doit être unique.
-- Le champ `price` doit être positif.
-- Le champ `stockQuantity` doit être ≥ 0.
-
-📌 **Auteur**  
-Développé par Belvinard Dev  
-📧 Contact : belvinard97mail@gmail.com

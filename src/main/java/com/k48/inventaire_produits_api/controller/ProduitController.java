@@ -6,6 +6,7 @@ import com.k48.inventaire_produits_api.dto.ProduitResponse;
 import com.k48.inventaire_produits_api.exception.ResourceNotFoundException;
 import com.k48.inventaire_produits_api.service.ProduitService;
 import jakarta.validation.Valid; // Pour activer la validation des DTOs
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -16,18 +17,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@RestController // Indique que c'est un contrôleur REST
-@RequestMapping("/api/produits") // Chemin de base pour toutes les requêtes de ce contrôleur
+@RestController
+@RequestMapping("/api/produits")
+@RequiredArgsConstructor
 public class ProduitController {
 
     private final ProduitService produitService;
 
-    // Injection par constructeur (sans @Autowired explicite car un seul constructeur)
-    public ProduitController(ProduitService produitService) {
-        this.produitService = produitService;
-    }
 
-    // POST /api/produits : Créer un nouveau produit
     @PostMapping
     public ResponseEntity<ProduitResponse> createProduit(@Valid @RequestBody ProduitRequest produitRequest) {
         // La validation se fait automatiquement grâce à @Valid
@@ -35,14 +32,13 @@ public class ProduitController {
         return new ResponseEntity<>(newProduit, HttpStatus.CREATED); // Code 201 Created
     }
 
-    // GET /api/produits : Récupérer tous les produits
+
     @GetMapping
     public ResponseEntity<List<ProduitResponse>> getAllProduits() {
         List<ProduitResponse> produits = produitService.getAllProduits();
         return new ResponseEntity<>(produits, HttpStatus.OK); // Code 200 OK
     }
 
-    // GET /api/produits/{id} : Récupérer un produit par son ID
     @GetMapping("/{id}")
     public ResponseEntity<ProduitResponse> getProduitById(@PathVariable Long id) {
         return produitService.getProduitById(id)
@@ -50,28 +46,25 @@ public class ProduitController {
                 .orElseThrow(() -> new ResourceNotFoundException("Produit non trouvé avec l'id : " + id));
     }
 
-    // PUT /api/produits/{id} : Mettre à jour un produit existant
     @PutMapping("/{id}")
     public ResponseEntity<ProduitResponse> updateProduit(@PathVariable Long id, @Valid @RequestBody ProduitRequest produitRequest) {
         ProduitResponse updatedProduit = produitService.updateProduit(id, produitRequest);
         return new ResponseEntity<>(updatedProduit, HttpStatus.OK); // Code 200 OK
     }
 
-    // DELETE /api/produits/{id} : Supprimer un produit
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProduit(@PathVariable Long id) {
         produitService.deleteProduit(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT); // Code 204 No Content
     }
 
-    // GET /api/produits/stock-bas?seuil={seuil} : Récupérer les produits en stock bas
     @GetMapping("/stock-bas")
     public ResponseEntity<List<ProduitResponse>> getProduitsEnStockBas(@RequestParam(defaultValue = "5") int seuil) {
         List<ProduitResponse> produitsEnStockBas = produitService.getProduitsEnStockBas(seuil);
         return new ResponseEntity<>(produitsEnStockBas, HttpStatus.OK);
     }
 
-    // GET /api/produits/search?nom={nom} : Rechercher des produits par nom
     @GetMapping("/search")
     public ResponseEntity<List<ProduitResponse>> searchProduitsByNom(@RequestParam String nom) {
         List<ProduitResponse> produitsTrouves = produitService.searchProduitsByNom(nom);

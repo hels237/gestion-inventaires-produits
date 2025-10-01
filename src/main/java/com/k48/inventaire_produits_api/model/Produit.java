@@ -1,4 +1,4 @@
-package com.k48.inventaire_produits_api.entity;
+package com.k48.inventaire_produits_api.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

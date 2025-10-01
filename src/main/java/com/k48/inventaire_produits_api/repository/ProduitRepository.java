@@ -1,7 +1,7 @@
 package com.k48.inventaire_produits_api.repository;
 
 
-import com.k48.inventaire_produits_api.entity.Produit;
+import com.k48.inventaire_produits_api.model.Produit;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -3,7 +3,7 @@ package com.k48.inventaire_produits_api.service;
 
 import com.k48.inventaire_produits_api.dto.ProduitRequest;
 import com.k48.inventaire_produits_api.dto.ProduitResponse;
-import com.k48.inventaire_produits_api.entity.Produit;
+import com.k48.inventaire_produits_api.model.Produit;
 import com.k48.inventaire_produits_api.exception.DuplicateResourceException;
 import com.k48.inventaire_produits_api.exception.ResourceNotFoundException;
 import com.k48.inventaire_produits_api.repository.ProduitRepository;
