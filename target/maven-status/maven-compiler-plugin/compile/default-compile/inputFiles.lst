@@ -1,11 +1,12 @@
 /home/hels/projet-48/gestion-inventaires-produits/src/main/java/com/k48/inventaire_produits_api/InventaireProduitsApiApplication.java
+/home/hels/projet-48/gestion-inventaires-produits/src/main/java/com/k48/inventaire_produits_api/config/SwaggerConfig.java
 /home/hels/projet-48/gestion-inventaires-produits/src/main/java/com/k48/inventaire_produits_api/controller/ProduitController.java
 /home/hels/projet-48/gestion-inventaires-produits/src/main/java/com/k48/inventaire_produits_api/dto/ProduitRequest.java
 /home/hels/projet-48/gestion-inventaires-produits/src/main/java/com/k48/inventaire_produits_api/dto/ProduitResponse.java
-/home/hels/projet-48/gestion-inventaires-produits/src/main/java/com/k48/inventaire_produits_api/entity/Produit.java
 /home/hels/projet-48/gestion-inventaires-produits/src/main/java/com/k48/inventaire_produits_api/exception/DuplicateResourceException.java
 /home/hels/projet-48/gestion-inventaires-produits/src/main/java/com/k48/inventaire_produits_api/exception/ResourceNotFoundException.java
 /home/hels/projet-48/gestion-inventaires-produits/src/main/java/com/k48/inventaire_produits_api/handler/GlobalExceptionHandler.java
+/home/hels/projet-48/gestion-inventaires-produits/src/main/java/com/k48/inventaire_produits_api/model/Produit.java
 /home/hels/projet-48/gestion-inventaires-produits/src/main/java/com/k48/inventaire_produits_api/repository/ProduitRepository.java
 /home/hels/projet-48/gestion-inventaires-produits/src/main/java/com/k48/inventaire_produits_api/service/ProduitService.java
 /home/hels/projet-48/gestion-inventaires-produits/src/main/java/com/k48/inventaire_produits_api/service/ProduitServiceImpl.java

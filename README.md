@@ -40,7 +40,7 @@ Une application RESTful développée en Java avec Spring Boot permettant de gér
 | `ProduitResponse`   | DTO pour les réponses contenant les produits |
 | `ProduitController` | Expose les endpoints REST de l'API          |
 | `ProduitService`    | Contient la logique métier liée aux produits|
-| `Produit`           | Entité JPA représentant un produit          |
+| `Produit`           | Entité JPA représentant un produit (package model) |
 
 ---
 
