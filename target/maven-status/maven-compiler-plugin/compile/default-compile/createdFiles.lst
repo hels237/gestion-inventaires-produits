@@ -1,12 +1,11 @@
-com/k48/inventaire_produits_api/model/Produit.class
+com/k48/inventaire_produits_api/dto/ProduitResponse.class
 com/k48/inventaire_produits_api/InventaireProduitsApiApplication.class
+com/k48/inventaire_produits_api/entity/Produit.class
 com/k48/inventaire_produits_api/service/ProduitServiceImpl.class
-com/k48/inventaire_produits_api/config/SwaggerConfig.class
 com/k48/inventaire_produits_api/repository/ProduitRepository.class
 com/k48/inventaire_produits_api/dto/ProduitRequest.class
-com/k48/inventaire_produits_api/exception/ResourceNotFoundException.class
-com/k48/inventaire_produits_api/dto/ProduitResponse.class
 com/k48/inventaire_produits_api/service/ProduitService.class
 com/k48/inventaire_produits_api/handler/GlobalExceptionHandler.class
 com/k48/inventaire_produits_api/exception/DuplicateResourceException.class
 com/k48/inventaire_produits_api/controller/ProduitController.class
+com/k48/inventaire_produits_api/exception/ResourceNotFoundException.class
